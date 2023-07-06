@@ -1,3 +1,4 @@
+# Ejercicio Semana 9
 ## Script SQL para crear las tablas del Blog
 - Los indices a medida que se necesiten se iran creando posteriormente
 
@@ -48,3 +49,6 @@ CREATE TABLE Comentario (
   UsuarioId INT
 );
 ```
+## Pantallazos PlanetScale
+
+![Alt text](image.png)
