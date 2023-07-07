@@ -1,31 +1,31 @@
 ## Script SQL para crear las tablas
 
 ```sql
--- Tabla Usuario
-CREATE TABLE Usuario (
-    id_usuario INT PRIMARY KEY,
-    nombre VARCHAR(50),
-    correo_electronico VARCHAR(50),
-    contraseña VARCHAR(50)
+-- Table User
+CREATE TABLE User (
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name varchar(50),
+    email varchar(50),
+    password varchar(50)
 );
 
--- Tabla Artículo
-CREATE TABLE Artículo (
-    id_articulo INT PRIMARY KEY,
-    título VARCHAR(100),
-    contenido TEXT,
-    fecha_publicacion DATE,
-    id_usuario INT,
-    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
+-- Table Article
+CREATE TABLE Article (
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title varchar(100),
+    content text,
+    publication_date date,
+    user_id int,
+    KEY user_id_xid (user_id)
 );
 
--- Tabla Comentario
-CREATE TABLE Comentario (
-    id_comentario INT PRIMARY KEY,
-    contenido TEXT,
-    fecha_publicacion DATE,
-    id_articulo INT,
-    id_usuario INT,
-    FOREIGN KEY (id_articulo) REFERENCES Artículo(id_articulo),
-    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
+-- Table Comment
+CREATE TABLE Comment (
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    content text,
+    publication_date date,
+    article_id int,
+    user_id int,
+    KEY article_id_xid (article_id),
+    KEY user_id_xid (user_id)
 );
